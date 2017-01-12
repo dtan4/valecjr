@@ -10,12 +10,12 @@ import (
 )
 
 var (
-	// AWSAccessKeyID represents AWS_ACCESS_KEY_ID
-	AWSAccessKeyID string
-	// AWSSecretAccessKey represents AWS_SECRET_ACCESS_KEY
-	AWSSecretAccessKey string
-	// AWSRegion represents AWS_REGION
-	AWSRegion string
+	// AccessKeyID represents AWS_ACCESS_KEY_ID
+	AccessKeyID string
+	// SecretAccessKey represents AWS_SECRET_ACCESS_KEY
+	SecretAccessKey string
+	// Region represents AWS_REGION
+	Region string
 	// IAMRoleARN represents IAM Role ARN to use
 	IAMRoleARN string
 
@@ -26,8 +26,8 @@ var (
 // Initialize initialized AWS API Clients
 func Initialize() error {
 	sess, err := session.NewSession(&aws.Config{
-		Credentials: credentials.NewStaticCredentials(AWSAccessKeyID, AWSSecretAccessKey, ""),
-		Region:      aws.String(AWSRegion),
+		Credentials: credentials.NewStaticCredentials(AccessKeyID, SecretAccessKey, ""),
+		Region:      aws.String(Region),
 	})
 	if err != nil {
 		return errors.Wrap(err, "Failed to create new AWS session.")

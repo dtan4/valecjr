@@ -2,15 +2,19 @@ NAME      := valecjr
 VERSION   := v0.1.0
 REVISION  := $(shell git rev-parse --short HEAD)
 
+AWS_ACCESS_KEY_ID ?= awsaccesskeyid
+AWS_SECRET_ACCESS_KEY ?= awssecretaccesskey
+AWS_REGION ?= ap-northeast-1
+
 SRCS      := $(shell find . -name '*.go' -type f)
-LDFLAGS   := -ldflags="-s -w -X \"github.com/dtan4/valecjr/version.Version=$(VERSION)\" -X \"github.com/dtan4/valecjr/version.Revision=$(REVISION)\" -extldflags \"-static\""
+LDFLAGS   := -ldflags="-s -w -X \"github.com/dtan4/valecjr/aws.AccessKeyID=$(AWS_ACCESS_KEY_ID)\" -X \"github.com/dtan4/valecjr/aws.SecretAccessKey=$(AWS_SECRET_ACCESS_KEY)\" -X \"github.com/dtan4/valecjr/aws.Region=$(AWS_REGION)\" -extldflags \"-static\""
 
 DIST_DIRS := find * -type d -exec
 
 .DEFAULT_GOAL := bin/$(NAME)
 
 bin/$(NAME): $(SRCS)
-	go build $(LDFLAGS) -o bin/$(NAME)
+	@go build $(LDFLAGS) -o bin/$(NAME)
 
 .PHONY: ci-test
 ci-test:
@@ -30,7 +34,7 @@ clean:
 
 .PHONY: cross-build
 cross-build:
-	for os in darwin linux windows; do \
+	@for os in darwin linux windows; do \
 		for arch in amd64 386; do \
 			GOOS=$$os GOARCH=$$arch go build -a -tags netgo -installsuffix netgo $(LDFLAGS) -o dist/$$os-$$arch/$(NAME); \
 		done; \
@@ -61,7 +65,7 @@ endif
 
 .PHONY: install
 install:
-	go install $(LDFLAGS)
+	@go install $(LDFLAGS)
 
 .PHONY: test
 test:
