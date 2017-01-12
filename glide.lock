@@ -1,0 +1,33 @@
+hash: b647e329687e52c8b84c1294fda3287ef624756b4e0989d2256bb40aa30bac40
+updated: 2017-01-12T16:48:17.417270483+09:00
+imports:
+- name: github.com/aws/aws-sdk-go
+  version: 63ce630574a5ec05ecd8e8de5cea16332a5a684d
+  subpackages:
+  - aws
+  - aws/awserr
+  - aws/awsutil
+  - aws/client
+  - aws/client/metadata
+  - aws/credentials
+  - aws/endpoints
+  - aws/request
+  - aws/signer/v4
+  - private/protocol
+  - private/protocol/query
+  - private/protocol/query/queryutil
+  - private/protocol/rest
+  - private/protocol/xml/xmlutil
+  - service/sts
+  - service/sts/stsiface
+- name: github.com/go-ini/ini
+  version: 2ba15ac2dc9cdf88c110ec2dc0ced7fa45f5678c
+- name: github.com/golang/mock
+  version: bd3c8e81be01eef76d4b503f5e687d2d1354d2d9
+  subpackages:
+  - gomock
+- name: github.com/jmespath/go-jmespath
+  version: bd40a432e4c76585ef6b72d3fd96fb9b6dc7b68d
+- name: github.com/pkg/errors
+  version: 645ef00459ed84a119197bfb8d8205042c6df63d
+testImports: []
