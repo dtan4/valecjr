@@ -1,5 +1,5 @@
-hash: c13d0405d319d1cf2b28f35a1f9b61ba4ed938b21559d14fa921676eeb924005
-updated: 2017-01-13T15:57:18.096986897+09:00
+hash: 7422e1baef6efaddcc4333b7ec64ecc61fd88628abdd13a70a33f742295076e3
+updated: 2017-01-13T17:57:49.859829375+09:00
 imports:
 - name: github.com/aws/aws-sdk-go
   version: 63ce630574a5ec05ecd8e8de5cea16332a5a684d
@@ -21,12 +21,21 @@ imports:
   - aws/session
   - aws/signer/v4
   - private/protocol
+  - private/protocol/json/jsonutil
+  - private/protocol/jsonrpc
   - private/protocol/query
   - private/protocol/query/queryutil
   - private/protocol/rest
   - private/protocol/xml/xmlutil
+  - private/waiter
+  - service/dynamodb
+  - service/dynamodb/dynamodbiface
   - service/sts
   - service/sts/stsiface
+- name: github.com/dtan4/valec
+  version: b7a22b12dba6e20698a7ead4cd58a73c5ae34042
+  subpackages:
+  - secret
 - name: github.com/go-ini/ini
   version: cf53f9204df4fbdd7ec4164b57fa6184ba168292
 - name: github.com/golang/mock

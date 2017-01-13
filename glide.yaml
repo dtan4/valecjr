@@ -8,3 +8,7 @@ import:
 - package: github.com/pkg/errors
   version: ~0.8.0
 - package: github.com/spf13/cobra
+- package: github.com/dtan4/valec
+  version: ~0.5.2
+  subpackages:
+  - secret
