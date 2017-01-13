@@ -8,8 +8,10 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	dynamodbapi "github.com/aws/aws-sdk-go/service/dynamodb"
+	kmsapi "github.com/aws/aws-sdk-go/service/kms"
 	stsapi "github.com/aws/aws-sdk-go/service/sts"
 	"github.com/dtan4/valec/aws/dynamodb"
+	"github.com/dtan4/valec/aws/kms"
 	"github.com/dtan4/valecjr/aws/sts"
 	"github.com/pkg/errors"
 )
@@ -26,6 +28,8 @@ var (
 
 	// DynamoDB represents DynamoDB API client
 	DynamoDB *dynamodb.Client
+	// KMS represents KMS API client
+	KMS *kms.Client
 	// STS represents STS API client
 	STS *sts.Client
 )
@@ -55,6 +59,7 @@ func Initialize() error {
 	}
 
 	DynamoDB = dynamodb.NewClient(dynamodbapi.New(tmpSess))
+	KMS = kms.NewClient(kmsapi.New(tmpSess))
 
 	return nil
 }
