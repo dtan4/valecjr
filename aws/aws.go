@@ -4,7 +4,9 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
+	dynamodbapi "github.com/aws/aws-sdk-go/service/dynamodb"
 	stsapi "github.com/aws/aws-sdk-go/service/sts"
+	"github.com/dtan4/valecjr/aws/dynamodb"
 	"github.com/dtan4/valecjr/aws/sts"
 	"github.com/pkg/errors"
 )
@@ -19,6 +21,8 @@ var (
 	// IAMRoleARN represents IAM Role ARN to use
 	IAMRoleARN string
 
+	// DynamoDB represents DynamoDB API client
+	DynamoDB *dynamodb.Client
 	// STS represents STS API client
 	STS *sts.Client
 )
@@ -33,6 +37,7 @@ func Initialize() error {
 		return errors.Wrap(err, "Failed to create new AWS session.")
 	}
 
+	DynamoDB = dynamodb.NewClient(dynamodbapi.New(sess))
 	STS = sts.NewClient(stsapi.New(sess))
 
 	return nil
