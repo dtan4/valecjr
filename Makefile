@@ -7,7 +7,7 @@ AWS_SECRET_ACCESS_KEY ?= awssecretaccesskey
 AWS_REGION ?= ap-northeast-1
 
 SRCS      := $(shell find . -name '*.go' -type f)
-LDFLAGS   := -ldflags="-s -w -X \"github.com/dtan4/valecjr/aws.AccessKeyID=$(AWS_ACCESS_KEY_ID)\" -X \"github.com/dtan4/valecjr/aws.SecretAccessKey=$(AWS_SECRET_ACCESS_KEY)\" -X \"github.com/dtan4/valecjr/aws.Region=$(AWS_REGION)\" -extldflags \"-static\""
+LDFLAGS   := -ldflags="-s -w -X \"github.com/dtan4/valecjr/aws.AccessKeyID=$(AWS_ACCESS_KEY_ID)\" -X \"github.com/dtan4/valecjr/aws.SecretAccessKey=$(AWS_SECRET_ACCESS_KEY)\" -X \"github.com/dtan4/valecjr/aws.Region=$(AWS_REGION)\" -X \"github.com/dtan4/valecjr/aws.IAMRoleARN=$(IAM_ROLE_ARN)\" -extldflags \"-static\""
 
 DIST_DIRS := find * -type d -exec
 

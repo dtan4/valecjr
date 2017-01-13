@@ -1,6 +1,9 @@
 package aws
 
 import (
+	"strconv"
+	"time"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -34,11 +37,28 @@ func Initialize() error {
 		Region:      aws.String(Region),
 	})
 	if err != nil {
-		return errors.Wrap(err, "Failed to create new AWS session.")
+		return errors.Wrap(err, "Failed to create new AWS session with embedded credentials.")
 	}
 
-	DynamoDB = dynamodb.NewClient(dynamodbapi.New(sess))
 	STS = sts.NewClient(stsapi.New(sess))
+	creds, err := STS.AssumeRole(IAMRoleARN, sessionName())
+	if err != nil {
+		return errors.Wrap(err, "Failed to retrieve temporary credentials.")
+	}
+
+	tmpSess, err := session.NewSession(&aws.Config{
+		Credentials: credentials.NewStaticCredentials(creds.AccessKeyID, creds.SecretAccessKey, creds.SessionToken),
+		Region:      aws.String(Region),
+	})
+	if err != nil {
+		return errors.Wrap(err, "Failed to create new AWS session with temporary credentials.")
+	}
+
+	DynamoDB = dynamodb.NewClient(dynamodbapi.New(tmpSess))
 
 	return nil
+}
+
+func sessionName() string {
+	return strconv.FormatInt(time.Now().Unix(), 10)
 }
