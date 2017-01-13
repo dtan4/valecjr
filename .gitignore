@@ -36,3 +36,4 @@ vendor/
 # End of https://www.gitignore.io/api/go
 
 /bin
+/coverage.txt

@@ -1,6 +1,8 @@
 # Valec Jr.
 
-## Auhor
+[![Build Status](https://travis-ci.org/dtan4/valecjr.svg?branch=master)](https://travis-ci.org/dtan4/valecjr)
+
+## Author
 
 Daisuke Fujita ([@dtan4](https://github.com/dtan4))
 
