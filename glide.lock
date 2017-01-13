@@ -1,5 +1,5 @@
-hash: b647e329687e52c8b84c1294fda3287ef624756b4e0989d2256bb40aa30bac40
-updated: 2017-01-12T16:48:17.417270483+09:00
+hash: c13d0405d319d1cf2b28f35a1f9b61ba4ed938b21559d14fa921676eeb924005
+updated: 2017-01-13T15:57:18.096986897+09:00
 imports:
 - name: github.com/aws/aws-sdk-go
   version: 63ce630574a5ec05ecd8e8de5cea16332a5a684d
@@ -9,9 +9,16 @@ imports:
   - aws/awsutil
   - aws/client
   - aws/client/metadata
+  - aws/corehandlers
   - aws/credentials
+  - aws/credentials/ec2rolecreds
+  - aws/credentials/endpointcreds
+  - aws/credentials/stscreds
+  - aws/defaults
+  - aws/ec2metadata
   - aws/endpoints
   - aws/request
+  - aws/session
   - aws/signer/v4
   - private/protocol
   - private/protocol/query
@@ -21,13 +28,19 @@ imports:
   - service/sts
   - service/sts/stsiface
 - name: github.com/go-ini/ini
-  version: 2ba15ac2dc9cdf88c110ec2dc0ced7fa45f5678c
+  version: cf53f9204df4fbdd7ec4164b57fa6184ba168292
 - name: github.com/golang/mock
   version: bd3c8e81be01eef76d4b503f5e687d2d1354d2d9
   subpackages:
   - gomock
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/jmespath/go-jmespath
-  version: bd40a432e4c76585ef6b72d3fd96fb9b6dc7b68d
+  version: 0b12d6b521d83fc7f755e7cfc1b1fbdd35a01a74
 - name: github.com/pkg/errors
   version: 645ef00459ed84a119197bfb8d8205042c6df63d
+- name: github.com/spf13/cobra
+  version: de09d9ce07d0d8a74442cfeaa91628cf9492cc23
+- name: github.com/spf13/pflag
+  version: 25f8b5b07aece3207895bf19f7ab517eb3b22a40
 testImports: []
