@@ -9,7 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	dynamodbapi "github.com/aws/aws-sdk-go/service/dynamodb"
 	stsapi "github.com/aws/aws-sdk-go/service/sts"
-	"github.com/dtan4/valecjr/aws/dynamodb"
+	"github.com/dtan4/valec/aws/dynamodb"
 	"github.com/dtan4/valecjr/aws/sts"
 	"github.com/pkg/errors"
 )
