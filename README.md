@@ -1,6 +1,7 @@
 # Valec Jr.
 
 [![Build Status](https://travis-ci.org/dtan4/valecjr.svg?branch=master)](https://travis-ci.org/dtan4/valecjr)
+[![codecov](https://codecov.io/gh/dtan4/valecjr/branch/master/graph/badge.svg)](https://codecov.io/gh/dtan4/valecjr)
 
 ## Author
 
