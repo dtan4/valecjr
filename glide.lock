@@ -1,5 +1,5 @@
 hash: 7422e1baef6efaddcc4333b7ec64ecc61fd88628abdd13a70a33f742295076e3
-updated: 2017-01-13T17:57:49.859829375+09:00
+updated: 2017-01-13T18:04:08.253321703+09:00
 imports:
 - name: github.com/aws/aws-sdk-go
   version: 63ce630574a5ec05ecd8e8de5cea16332a5a684d
@@ -30,11 +30,15 @@ imports:
   - private/waiter
   - service/dynamodb
   - service/dynamodb/dynamodbiface
+  - service/kms
+  - service/kms/kmsiface
   - service/sts
   - service/sts/stsiface
 - name: github.com/dtan4/valec
   version: b7a22b12dba6e20698a7ead4cd58a73c5ae34042
   subpackages:
+  - aws/dynamodb
+  - aws/kms
   - secret
 - name: github.com/go-ini/ini
   version: cf53f9204df4fbdd7ec4164b57fa6184ba168292
@@ -52,4 +56,6 @@ imports:
   version: de09d9ce07d0d8a74442cfeaa91628cf9492cc23
 - name: github.com/spf13/pflag
   version: 25f8b5b07aece3207895bf19f7ab517eb3b22a40
+- name: gopkg.in/yaml.v2
+  version: e4d366fc3c7938e2958e662b4258c7a89e1f0e3e
 testImports: []
