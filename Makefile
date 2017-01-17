@@ -5,6 +5,7 @@ REVISION  := $(shell git rev-parse --short HEAD)
 AWS_ACCESS_KEY_ID ?= awsaccesskeyid
 AWS_SECRET_ACCESS_KEY ?= awssecretaccesskey
 AWS_REGION ?= ap-northeast-1
+IAM_ROLE_ARN ?= iamrolearn
 
 SRCS      := $(shell find . -name '*.go' -type f)
 LDFLAGS   := -ldflags="-s -w -X \"github.com/dtan4/valecjr/aws.AccessKeyID=$(AWS_ACCESS_KEY_ID)\" -X \"github.com/dtan4/valecjr/aws.SecretAccessKey=$(AWS_SECRET_ACCESS_KEY)\" -X \"github.com/dtan4/valecjr/aws.Region=$(AWS_REGION)\" -X \"github.com/dtan4/valecjr/aws.IAMRoleARN=$(IAM_ROLE_ARN)\" -extldflags \"-static\""
