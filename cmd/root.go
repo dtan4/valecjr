@@ -23,13 +23,7 @@ var RootCmd = &cobra.Command{
 	SilenceUsage:  true,
 	SilenceErrors: true,
 	Use:           "valecjr",
-	Short:         "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short:         "Minimal subset of Valec",
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 		if err := aws.Initialize(); err != nil {
 			return errors.Wrap(err, "Failed to initialize AWS API clients.")
