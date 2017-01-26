@@ -1,8 +1,8 @@
-hash: 7422e1baef6efaddcc4333b7ec64ecc61fd88628abdd13a70a33f742295076e3
-updated: 2017-01-13T18:08:26.127360584+09:00
+hash: 33b72cb12fa6ab2f1d64d951c336dd6760096bad17104dc44c766324ef9cd1f3
+updated: 2017-01-26T20:25:48.20226983+09:00
 imports:
 - name: github.com/aws/aws-sdk-go
-  version: 63ce630574a5ec05ecd8e8de5cea16332a5a684d
+  version: aa8704199ea17856a3f37852f16a6008aea97e81
   subpackages:
   - aws
   - aws/awserr
@@ -35,8 +35,9 @@ imports:
   - service/sts
   - service/sts/stsiface
 - name: github.com/dtan4/valec
-  version: b7a22b12dba6e20698a7ead4cd58a73c5ae34042
+  version: 297780b94457cc25b78e61703cc6bbd120b18c93
   subpackages:
+  - aws
   - aws/dynamodb
   - aws/kms
   - secret
@@ -60,13 +61,13 @@ imports:
 - name: github.com/spf13/cobra
   version: de09d9ce07d0d8a74442cfeaa91628cf9492cc23
 - name: github.com/spf13/pflag
-  version: 25f8b5b07aece3207895bf19f7ab517eb3b22a40
+  version: 5ccb023bc27df288a957c5e994cd44fd19619465
 - name: golang.org/x/crypto
   version: 1f22c0103821b9390939b6776727195525381532
   subpackages:
   - ssh/terminal
 - name: golang.org/x/sys
-  version: d5645953809d8b4752afb2c3224b1f1ad73dfa70
+  version: 8f0908ab3b2457e2e15403d3697c9ef5cb4b57a9
   subpackages:
   - unix
 - name: gopkg.in/yaml.v2
