@@ -1,5 +1,5 @@
 NAME      := valecjr
-VERSION   := v0.1.0
+VERSION   := v0.2.0
 REVISION  := $(shell git rev-parse --short HEAD)
 
 AWS_ACCESS_KEY_ID ?= awsaccesskeyid
